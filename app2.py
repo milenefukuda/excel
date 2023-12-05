@@ -6,7 +6,11 @@ book = openpyxl.load_workbook('Planilha de Compras.xlsx')
 # Selecionando uma página
 frutas_page = book['Frutas']
 
-# Imprimir os dados de cada linha 
-for rows in frutas_page.iter_rows(min_row=2,max_row=4):
+# Alterando informações dentro da céular
+for rows in frutas_page.iter_rows(min_row=1,max_row=5):
     for cell in rows:
-        print(cell.value)
+        if cell.value == 'Uva':
+            cell.value == 'Fruta 1'
+
+# Salvar as alterações
+book.save('Planilha de Compras v2.xlsx')
