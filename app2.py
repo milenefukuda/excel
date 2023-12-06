@@ -10,7 +10,7 @@ frutas_page = book['Frutas']
 for rows in frutas_page.iter_rows(min_row=1,max_row=5):
     for cell in rows:
         if cell.value == 'Uva':
-            cell.value == 'Fruta 1'
+            cell.value = 'Fruta 1'
 
 # Salvar as alterações
 book.save('Planilha de Compras v2.xlsx')
